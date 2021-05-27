@@ -9,5 +9,6 @@ source venv/bin/activate
 cd How-To-Get-VM-CPU-MEM-Disk
 pip3 install -r requirements.txt
 python3 app.py
+visit http://127.0.0.1:5000/get-cpu-memory-hdd
 
 ```
