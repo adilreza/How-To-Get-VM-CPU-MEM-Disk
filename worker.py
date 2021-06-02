@@ -1,5 +1,7 @@
 import psutil
 import os
+import subprocess
+from subprocess import STDOUT
 
 def mytestfun():
     return "this is from worker"
@@ -106,3 +108,8 @@ def total_free():
                 continue
             total = get_size(partition_usage.free)
     return float(total[0:-2]);
+
+def service_check(service_name):
+    cmd = '''systemctl status {} | grep "Active:"'''.format(service_name)
+    result = subprocess.check_output(cmd, shell=True, stderr=STDOUT)
+    return (result.decode("utf-8")).strip()
