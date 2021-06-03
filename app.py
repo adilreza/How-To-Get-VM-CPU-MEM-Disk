@@ -26,6 +26,7 @@ def summary():
 def cpumemhdd():
     data_list = [
         {
+            "servic_status": worker.service_check("nginx"),
             "cpu_core_count":worker.core_count(),"cpu_used_percent":worker.cpu_percentage(),
             "ram_in_total":worker.total_in_mb(),"ram_used_percent":worker.memory_use_percentage(),
             "ram_used_MB": worker.used_in_mb(),
