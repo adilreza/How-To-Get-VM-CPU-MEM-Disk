@@ -22,7 +22,7 @@ def summary():
         data2 = "this is data2",
         
     )
-@app.route("/get-cpu-memory-hdd")
+@app.route("/get-specs")
 def cpumemhdd():
     data_list = [
         {
